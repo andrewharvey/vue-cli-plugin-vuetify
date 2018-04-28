@@ -166,12 +166,5 @@ module.exports = (api, opts, rootOpts) => {
       fs.writeFileSync(indexPath, content, { encoding: 'utf8' })
     }
 
-    // Based on router option, remove unneccessary vue components
-    const rimraf = require('rimraf')
-    if (opts.router) {
-      rimraf( api.resolve('./src/components'), () => {})
-    } else {
-      rimraf( api.resolve('./src/views'), () => {})
-    }
   })
 }
